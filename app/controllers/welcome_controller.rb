@@ -13,6 +13,9 @@ class WelcomeController < ApplicationController
   	@size = params[:size].to_i
   end
 
+  def contact
+  end
+
 end
 
 

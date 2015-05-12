@@ -10,7 +10,7 @@
 </ul>
 
 <% @images.shuffle.each do |image| %>
-	<%= image_tag image %><br />
+	<%= image_tag image, class: "img-responsive" %><br />
 <% end %>
 
 <%# @images_hash.each do |key, value| %>
