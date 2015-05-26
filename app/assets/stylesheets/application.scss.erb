@@ -17,9 +17,12 @@
 
 
 body {
-	background: url(<%= asset_path "the-woods.jpg" %>) center center no-repeat;
-	background-size: cover;
-	background-position: fixed;
+	background: url(<%= asset_path "the-woods.jpg" %>) center center no-repeat;	
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	background-attachment:fixed;
 }
 
 .container {

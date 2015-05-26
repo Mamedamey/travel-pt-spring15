@@ -15,9 +15,13 @@
   <%= @destination.description %>
 </p>
 
-<%= image_tag @destination.avatar.url %>
-<%= image_tag @destination.avatar.url(:medium) %>
-<%= image_tag @destination.avatar.url(:thumb) %>
+<p>
+	<%#= image_tag @destination.avatar.url %>
+	<%= image_tag @destination.avatar.url(:medium) %>
+	<%= image_tag @destination.avatar.url(:thumb) %>
+</p>
 
-<%= link_to 'Edit', edit_destination_path(@destination) %> |
-<%= link_to 'Back', destinations_path %>
+<p>
+	<%= link_to 'Edit', edit_destination_path(@destination), class: "btn btn-warning" %> |
+	<%= link_to 'Back', destinations_path, class: "btn btn-primary" %>
+</p>
