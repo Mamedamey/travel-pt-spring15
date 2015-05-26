@@ -1,0 +1,29 @@
+<h1>Listing destinations</h1>
+
+<p>
+  <%= link_to 'New Destination', new_destination_path, class: "btn btn-success" %>
+</p>
+
+<ul class="nav nav-pills" role="tablist">
+  <% @my_countries.each do |c| %>
+    <li><%= link_to c.country, destinations_path(country: c.country) %></li>
+  <% end %>
+</ul>
+
+<div class="row">
+  <% @destinations.each do |destination| %>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading"><%= destination.city %>, <%= destination.country %></div>
+        <div class="panel-body">
+          <p><strong>Population:</strong> <%= destination.population %></p>
+          <p><%= destination.description %></p>
+          <% if destination.avatar_file_name != nil %>
+            <%= image_tag destination.avatar.url(:thumb) %>
+          <% end %>
+        </div>
+        <div class="panel-footer"><%= link_to 'Show', destination, class: "btn btn-primary" %> <%= link_to 'Edit', edit_destination_path(destination), class: "btn btn-warning" %> <%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></div>
+      </div>
+    </div>  
+  <% end %>
+</div>

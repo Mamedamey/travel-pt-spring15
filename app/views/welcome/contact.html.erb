@@ -1,2 +1,19 @@
 <h1>Contact Me</h1>
 <p>Hey, drop me a line sometime.</p>
+
+<table class="table">
+  <tr>
+    <% @united_states.each do |key,value| %>
+	  <th><%= key %></th>
+    <% end %>
+  </tr>
+  <tr>
+    <% @united_states.each do |key,value| %>      
+      <% if value.kind_of?(Array) %>
+          <td><%= value.join(", ") %></td>
+      <% else %>
+         <td><%= value %></td>
+      <% end %> 
+    <% end %>
+  </tr>
+</table>

@@ -14,6 +14,7 @@ class WelcomeController < ApplicationController
   end
 
   def contact
+    @united_states = {"Capital City" => "Washington, DC", "Favorite City" => "San Diego", "Favorite State" => "Colorado", "Flag Colors" => ["Red","White","Blue"]}
   end
 
 end
